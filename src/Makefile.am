@@ -17,7 +17,7 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += myriadcoin-cli
+  bin_PROGRAMS += myriad-cli
 endif
 
 SUBDIRS = . $(BUILD_QT) $(BUILD_TEST)

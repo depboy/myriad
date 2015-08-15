@@ -914,7 +914,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "myriadcoin";
+    const char* pszModule = "myriad";
 #endif
     if (pex)
         return strprintf(
@@ -941,13 +941,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Myriadcoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Myriadcoin
-    // Mac: ~/Library/Application Support/Myriadcoin
-    // Unix: ~/.myriadcoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Myriad
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Myriad
+    // Mac: ~/Library/Application Support/Myriad
+    // Unix: ~/.myriad
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Myriadcoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Myriad";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -959,10 +959,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Myriadcoin";
+    return pathRet / "Myriad";
 #else
     // Unix
-    return pathRet / ".myriadcoin";
+    return pathRet / ".myriad";
 #endif
 #endif
 }
@@ -1011,7 +1011,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "myriadcoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "myriad.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1277,7 +1277,7 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong Myriadcoin will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong Myriad will not work properly.");
                     strMiscWarning = strMessage;
                     LogPrintf("*** %s\n", strMessage);
                     uiInterface.ThreadSafeMessageBox(strMessage, "", CClientUIInterface::MSG_WARNING);

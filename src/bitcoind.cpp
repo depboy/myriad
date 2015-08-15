@@ -86,11 +86,11 @@ bool AppInit(int argc, char* argv[])
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
             // First part of help message is specific to bitcoind / RPC client
-            std::string strUsage = _("Myriadcoin Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n\n" +
+            std::string strUsage = _("Myriad Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  myriadcoind [options]                     " + _("Start Myriadcoin Core Daemon") + "\n" +
-                _("Usage (deprecated, use myriadcoin-cli):") + "\n" +
-                  "  myriadcoind [options] <command> [params]  " + _("Send command to Myriadcoin Core") + "\n" +
+                  "  myriadcoind [options]                     " + _("Start Myriad Core Daemon") + "\n" +
+                _("Usage (deprecated, use myriad-cli):") + "\n" +
+                  "  myriadcoind [options] <command> [params]  " + _("Send command to Myriad Core") + "\n" +
                   "  myriadcoind [options] help                " + _("List commands") + "\n" +
                   "  myriadcoind [options] help <command>      " + _("Get help for a command") + "\n";
 
@@ -104,7 +104,7 @@ bool AppInit(int argc, char* argv[])
         // Command-line RPC
         bool fCommandLine = false;
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "myriadcoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "myriad:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -116,7 +116,7 @@ bool AppInit(int argc, char* argv[])
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon)
         {
-            fprintf(stdout, "Myriadcoin server starting\n");
+            fprintf(stdout, "Myriad server starting\n");
 
             // Daemonize
             pid_t pid = fork();

@@ -930,7 +930,7 @@ void static GenericMiner(CWallet *pwallet, int algo)
 
 void static ThreadBitcoinMiner(CWallet *pwallet)
 {
-    LogPrintf("Myriadcoin miner started\n");
+    LogPrintf("Myriad miner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
     RenameThread("bitcoin-miner");
 
@@ -957,7 +957,7 @@ void static ThreadBitcoinMiner(CWallet *pwallet)
     }
     catch (boost::thread_interrupted)
     {
-        LogPrintf("Myriadcoin miner terminated\n");
+        LogPrintf("Myriad miner terminated\n");
         throw;
     }
 }

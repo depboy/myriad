@@ -64,14 +64,14 @@ public:
         assert(hashGenesisBlock == uint256("0x00000ffde4c020b5938441a0ea3d314bf619eff0b38f32f78f7583cffa1ea485"));
         assert(genesis.hashMerkleRoot == uint256("0x3f75db3c18e92f46c21530dc1222e1fddf4ccebbf88e289a6c9dc787fd6469da"));
 
-        vSeeds.push_back(CDNSSeedData("seed1.myriadcoin.org", "seed1.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed2.myriadcoin.org", "seed2.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed3.myriadcoin.org", "seed3.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed4.myriadcoin.org", "seed4.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed5.myriadcoin.org", "seed5.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed6.myriadcoin.org", "seed6.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed7.myriadcoin.org", "seed7.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed8.myriadcoin.org", "seed8.myriadcoin.org"));
+        vSeeds.push_back(CDNSSeedData("seed1.myriad.org", "seed1.myriad.org"));
+        vSeeds.push_back(CDNSSeedData("seed2.myriad.org", "seed2.myriad.org"));
+        vSeeds.push_back(CDNSSeedData("seed3.myriad.org", "seed3.myriad.org"));
+        vSeeds.push_back(CDNSSeedData("seed4.myriad.org", "seed4.myriad.org"));
+        vSeeds.push_back(CDNSSeedData("seed5.myriad.org", "seed5.myriad.org"));
+        vSeeds.push_back(CDNSSeedData("seed6.myriad.org", "seed6.myriad.org"));
+        vSeeds.push_back(CDNSSeedData("seed7.myriad.org", "seed7.myriad.org"));
+        vSeeds.push_back(CDNSSeedData("seed8.myriad.org", "seed8.myriad.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(50);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(9);
@@ -134,7 +134,7 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("testseed1.myriadcoin.org", "testseed1.myriadcoin.org"));
+        vSeeds.push_back(CDNSSeedData("testseed1.myriad.org", "testseed1.myriad.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(88);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(188);

@@ -47,10 +47,10 @@
 using namespace boost;
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("myriadcoin:");
-const char* BITCOIN_REQUEST_MIMETYPE = "application/myriadcoin-paymentrequest";
-const char* BITCOIN_PAYMENTACK_MIMETYPE = "application/myriadcoin-paymentack";
-const char* BITCOIN_PAYMENTACK_CONTENTTYPE = "application/myriadcoin-payment";
+const QString BITCOIN_IPC_PREFIX("myriad:");
+const char* BITCOIN_REQUEST_MIMETYPE = "application/myriad-paymentrequest";
+const char* BITCOIN_PAYMENTACK_MIMETYPE = "application/myriad-paymentack";
+const char* BITCOIN_PAYMENTACK_CONTENTTYPE = "application/myriad-payment";
 
 X509_STORE* PaymentServer::certStore = NULL;
 void PaymentServer::freeCertStore()
@@ -290,7 +290,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "emit message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start myriadcoin: click-to-pay handler"));
+                tr("Cannot start myriad: click-to-pay handler"));
         }
         else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
@@ -414,7 +414,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
                 emit receivedPaymentRequest(recipient);
             else
                 emit message(tr("URI handling"),
-                    tr("URI can not be parsed! This can be caused by an invalid Myriadcoin address or malformed URI parameters."),
+                    tr("URI can not be parsed! This can be caused by an invalid Myriad address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;
